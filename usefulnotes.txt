@@ -1,0 +1,11 @@
+# Known for - Nbsp stands for non-breaking space, meaning
+# that strings separated with this entity will not be separated and put into separate lines.
+
+
+# its line break vs summary <- line break is a better separator, it basically eliminates overly-long summaries
+# while keeping most summaries as it is already a common separator there
+
+for scraping more data on a person:
+    cols = list(personDf.columns)
+
+    personDf.set_index(cols[0], inplace=True)
