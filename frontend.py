@@ -123,7 +123,6 @@ with cats:
                      "War: 24, +  war.: 4 = 28  \n"
                      )
 
-
     # ---- Helper Function ---
     def barChart(dataframe, color, name, total=0, tickanglevalue=0, needsTotal=True):
         barFig = go.Figure(go.Bar(x=dataframe["Words"], y=dataframe["Count"],
