@@ -83,7 +83,6 @@ with center:
                 "- Pandas (And its dependencies like Beautiful Soup 4)  \n"
                 "- Wikipedia-api  \n")
 
-
 # DATA READY FOR DISPLAY - MAKING CHARTS
 
 cats, trends, data = st.tabs(["Categories", "Trends", "Source Data"])
@@ -165,100 +164,107 @@ with cats:
 
     adjs, pols = st.columns(2)
     with adjs:
-        barChart(source.adjectives, "#40C391", "Adjectives", 114, tickanglevalue=45)
+        barChart(source.adjectives, "#40C391", "Adjectives", 185, tickanglevalue=45)
         st.write("Bold Leadership and superlatives.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write("Leader: 26  +  leaders: 6 + leadership: 4 + leader.: 2 + leadership.: 1 = 39  \n" +
-                     "First: 30, + first-ever: 1 = 31  \n" +
-                     "New: 20  \n" +
-                     "Most: 15  \n" +
-                     "Largest: 6  \n" +
-                     "Revolutionary: 3  \n" +
-                     "Total: 114"
+            st.write("First:49 + first-ever:1 = 50  \n"
+                     "Leader:34 + leadership:6 + leader.:4 + leadership.:1= 45  \n"
+                     "New: 29  \n"
+                     "Most: 21  \n"
+                     "Known: 14  \n"
+                     "Revolutionary: 8  \n"
+                     "Prominent: 6  \n"
+                     "Largest: 6  \n"
+                     "Female:6  \n"
                      )
 
     # -----
     with pols:
-        barChart(source.politics, "#E073E9", "Politics", 76, tickanglevalue=45)
+        barChart(source.politics, "#E073E9", "Politics", 228, tickanglevalue=45)
         st.write("Politcs is an interesting game... Of influence.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write(
-                "Politician: 21 + politician.: 2 + politicians: 1 + statesman: 7 + statesman.: 1 + political: 15 = 47 "
-                " \n" +
-                "Government: 10  \npresidential: 8  \nfederal: 8  \n" +
-                "Politics: 3  \n" +
-                "Total: 76"
-            )
+            st.write("Politician:35 + political: 24 + politician.:2  + statesman:11 + statesman.:2 = 74  \n"
+                     "Party: 43 + party’s:5 = 48  \n"
+                     "Government: 18  + government.:5  = 23  \n"
+                     "Democratic: 20  \n"
+                     "National: 16  \n"
+                     "Federal: 16  \n"
+                     "Republican:14  \n"
+                     "Presidential: 11  \n"
+                     "Politics: 4 + politics.:2 = 6  \n"
+
+                     )
 
     # -----
     eventChart, positions = st.columns(2)
 
     with eventChart:
-        barChart(source.events, "#07C3CF", "Events", 48)
+        barChart(source.events, "#07C3CF", "Events", 99)
         st.write("Leadership during an era of crisis... Hard but rewarding?")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write("War: 24 +  war.: 4 = 28  \n" +
-                     "Climate: 6 + environment: 1 + nature: 1 = 8  \n" +
-                     "Revolution: 5 + revolutions: 1 = 6  \n" +
-                     "Total: 48")
+            st.write("War: 44 + war.:7 = 51  \n"
+                     "Death:19 + death.:2 = 21  \n"
+                     "Revolution:10 + 'revolutions': 1 = 11  \n"
+                     "Election: 7 + election.:4 = 11  \n"
+                     "Crisis: 5  \n")
+
     # ---
     with positions:
-        barChart(source.positionOfPower, "#EBAA4E", "Positions Of Power", 172, tickanglevalue=45)
+        barChart(source.positionOfPower, "#EBAA4E", "Positions Of Power", 278, tickanglevalue=45)
         st.write("Just pointing out that they usually are in a position of power inside the government.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write("President: 44  \n" +
-                     "Secretary: 14  \n" +
-                     'Minister: 9 +  minister): 1 + ministers: 3 = 13  \n' +
-                     'General: 11  \n' +
-                     'Chairman: 9  \n' +
-                     'Chancellor: 9 + vice-chancellor: 1 = 10  \n' +
-                     'Marshall: 9  \n' +
-                     'Pope: 7  \n' +
-                     'Governor: 6  \n' +
-                     'Senator: 6  \n' +
-                     'Head: 6  \n' +
-                     'King: 6  \n' +
-                     'Mayor: 5 + mayor".: 1 = 6  \n' +
-                     'Queen: 5  \n' +
-                     'Commander: 5  \n' +
-                     'Emperor: 3 + king-emperor: 1 = 4  \n' +
-                     'Chief: 4  \n' +
-                     'Dictator: 2  \n'
-                     "Total: 172"
+            st.write("President: 78  \n"
+                     "Secretary: 22  \n"
+                     "Chairman: 18  \n"
+                     "Marshall: 18  \n"
+                     "Minister': 16, +  minister): 1  = 17  \n"
+                     "General: 16  \n"
+                     "Senator: 15  \n"
+                     "Commander': 9 + Commander-in-chief:2 = 11  \n"
+                     "King: 11  \n"
+                     "Chancellor: 9 + vice-chancellor: 1 = 10  \n"
+                     "Pope: 10  \n"
+                     "Governor: 9  \n"
+                     "Head: 8  \n"
+                     "Chief': 8  \n"
+                     "Mayor': 5 + mayor'.: 1 = 6  \n"
+                     "Queen': 4 + Queen’s:1 = 5  \n"
+                     "Emperor': 3 + King-emperor: 1 = 4  \n"
+                     "Dictator: 3 + Dictatorship:1 = 4  \n"
+
                      )
     # ---
     coljobs, colcountries = st.columns(2)
     with coljobs:
-        barChart(source.jobs, "#E01E5A", "Occupations", 47)
+        barChart(source.jobs, "#E01E5A", "Occupations", 69)
 
         st.write("Other jobs that give influence apart from directly politics. ")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write("Lawyer: 6 + Attorney: 6 + lawyers: 1 =13  \n"
-                     'Businessman: 6 + entrepreneur: 2 + founder: 4 = 12  \n'
-                     'Executive: 5 + ceo: 3 = 8  \n'
-                     'Author: 3 +  writer: 2 + columnist.: 1 = 6  \n'
-                     'Activist: 4  \n'
-                     'Diplomat: 4  \n'
-                     "Total: 47"
+            st.write("Businessman: 6 + entrepreneur: 4 + founder: 8 + co-founder:1  = 19  \n"
+                     "Lawyer: 8 + attorney:11 = 19  \n"
+                     "Executive: 8 + ceo: 6  = 14  \n"
+                     "Activist: 5, + activist.:1 = 6  \n"
+                     "Author': 3 +  Writer: 4 +  Columnist.: 1 + Columnist:1 + Journalist: 4 = 6  \n"
+                     "Diplomat: 5"
                      )
 
     # ---
     with colcountries:
-        barChart(source.countries, "#ECB22E", "Countries", 186, tickanglevalue=45)
+        barChart(source.countries, "#ECB22E", "Countries", 283, tickanglevalue=45)
         st.write("Well.. The list was made from an american perspective. I guess it helps if your nation is powerful.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write("American: 35 + u.s.: 22 + america: 2 + america\'s: 1 + america.: 1 = 61  \n" +
-                     "Germany: 11, +  german: 8, german: 4, + germany.: 1 + germany's: 1 = 25  \n" +
-                     "China: 11 + chinese: 8 + china.: 2 +  china'.: 1 + china's: 1 +  (chinese: 1 = 24  \n" +
-                     'Soviet: 18  \n' +
-                     'French: 6 france: 6 + france: 2 +  (french: 2  = 16  \n' +
-                     "Poland: 5, +  poland's: 1 + polish: 7 = 13  \n" +
-                     'Iran: 4, + iranian: 8 = 12  \n' +
-                     'British: 7  \n' +
-                     'Columbia: 5  \n' +
-                     'Africa: 4 + african: 1  = 5  \n' +
-                     "Total: 186"
-
+            st.write("American': 57, + U.S.: 35 + america: 5, + america\'s:1 +  america.: 2 = 100  \n"
+                     "China': 18 + chinese: 12 +china.: 3 + china'.: 2 + china's: 2 +  (chinese: 1 = 38  \n"
+                     "Soviet: 31  \n"
+                     "Germany': 11, +  german: 8 + (german: 4 +  germany.: 1 + germany's: 1 = 25  \n"
+                     "French: 5 +  france: 7, + france.: 3 +  (french: 1  = 16  \n"
+                     "Hungary:3 + hungarian:11 + hungarians:1 = 15  \n"
+                     "Poland: 5, +  poland's: 1 +  polish: 7 = 13  \n"
+                     "Iran: 4, + 'iranian: 8 = 12  \n"
+                     "Africa: 8 + african: 2 + africa.:1  = 11  \n"
+                     "Saudi: 9  \n"
+                     "British: 7  \n"
+                     "Russia:4 + russian:1 + russia.:1 = 6  \n"
                      )
 
     # ---
@@ -266,47 +272,54 @@ with cats:
     colmil, colreligion = st.columns(2)
 
     with colmil:
-        barChart(source.military, "#5D6728", "Military", 50)
+        barChart(source.military, "#5D6728", "Military", 123)
         st.write("Not surprised by this.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write('Army: 11 + army.: 1 = 12  \n' +
-                     'General: 11  \n' +
-                     'Military: 9  \n' +
-                     'Marshall: 9  \n' +
-                     'Commander: 5  \n' +
-                     'Chief: 4  \n' +
-                     "Total: 50"
+            st.write("Military: 24  \n"
+                     "Army: 21 + army.: 2 = 23  \n"
+                     "Marshall: 18  \n"
+                     "General: 16  \n"
+                     "Forces:13  \n"
+                     "Commander: 9 + Commander-in-chief:2 =   \n"
+                     "Officer:10  \n"
+                     "Chief: 8  \n"
                      )
     # ---
     with colreligion:
-        barChart(source.religion, "#EAEAEA", "Religion", 19)
+        barChart(source.religion, "#EAEAEA", "Religion", 26)
         st.write("The head of the Catholic Church has a huge following and an audience that listens to "
                  "him.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write('Pope: 7  \n'
-                     'Church: 3  \n'
-                     'Vatican: 3  \n'
-                     'Catholic: 3  \n'
-                     'Religious: 3  \n'
-                     "Total: 19")
+            st.write("Pope: 10  \n"
+                     "Church: 3 + church.:1 = 4  \n"
+                     "Vatican: 4  \n"
+                     "Catholic: 4  \n"
+                     "Religious: 4  \n"
+                     )
     # ---
 
     leftouter, inner, rightouter = st.columns([0.5, 1, 0.5])
 
     with inner:
-        barChart(source.other, "#2D3C4E", "Other - Non Categorized, But Worth Mention", 95, tickanglevalue=45)
+        barChart(source.other, "#2D3C4E", "Other - Non Categorized, But Worth Mention", 263, tickanglevalue=45)
         st.write("Miscellaneous.")
         with st.expander("See the data and word bundles for this table :point_up:"):
-            st.write("World: 15 + world.: 4 + world's: 3 = 22  \n"
-                     "Member: 17  \n"
-                     "Power: 11  \n"
-                     "Known: 11  \n"
-                     "Social: 8  \n"
-                     'Company: 7  \n'
-                     "Against: 7  \n"
-                     'Following: 6  \n'
-                     "Nobel: 6  \n"
-                     "Total:  95 \n")
+            st.write("World:30 + world.:4 + world's:5 = 39  \n"
+                     "During:35   \n"
+                     "Member:31  \n"
+                     "Climate: 6 + climate): 1 + environment: 3 + nature: 1 + environmentalism: 3 + "
+                     "environmentalism.: 1 + environmentalism: 6 = 21  \n"
+                     "Civil: 17   \n"
+                     "Social: 16  \n"
+                     "Against: 15  \n"
+                     "Power: 14  \n"
+                     "Economic: 14  \n"
+                     "Communist: 14  \n"
+                     "Company: 13  \n"
+                     "University: 12 + university.:1 = 13  \n"
+                     "Following: 12  \n"
+                     "Peace: 9  \n"
+                     )
 
 with trends:
     leftmargin, core, rightmargin = st.columns([0.5, 1, 0.5])
@@ -316,7 +329,8 @@ with trends:
         st.write("This section demonstrates the fluctuations in the popularity of words used in the articles of the "
                  "honorees between the timeframes.")
 
-        st.write("To do this, I scraped the honorees selected during the specified timeframe and picked the top 10 nouns "
+        st.write("To do this, I scraped the honorees selected during the specified timeframe and picked the top 10 "
+                 "nouns "
                  "and/or adjectives that occurred in the first paragraph of their wikipedia articles. "
                  "No word bundles were made.")
 
@@ -338,4 +352,3 @@ with trends:
 
     with central:
         barChart(source.fifthPeriod2003, "#748FFB", "2003-2021", needsTotal=False, tickanglevalue=45)
-
