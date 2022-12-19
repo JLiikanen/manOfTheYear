@@ -1,11 +1,14 @@
-# Known for - Nbsp stands for non-breaking space, meaning
-# that strings separated with this entity will not be separated and put into separate lines.
+Should I use the summary attribute or just use the line break as a separator to find the first paragraph?
+    It is line break vs summary. -> Line break is a better separator, it basically eliminates overly-long summaries
+    while keeping most summaries as it is already a common separator there.
 
 
-# its line break vs summary <- line break is a better separator, it basically eliminates overly-long summaries
-# while keeping most summaries as it is already a common separator there
+requirements:
+        python 3.10 -> I used this version. Probably works fine on all python 3.0 versions and above.
+        wikipedia >=1.4.0
+        pandas >= 1.5.1
+        plotly >= 5.11.0
+        streamlit >= 1.15.0
 
-for scraping more data on a person:
-    cols = list(personDf.columns)
 
-    personDf.set_index(cols[0], inplace=True)
+

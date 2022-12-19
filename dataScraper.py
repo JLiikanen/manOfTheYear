@@ -53,7 +53,7 @@ def wordParser(namelst):
             try:
                 p_wiki = wikipedia.WikipediaPage(cleanedDude).content
             except (wikipedia.exceptions.PageError, wikipedia.exceptions.DisambiguationError):
-                    print(f"ERROR ERROR - NOT FOUND {cleanedDude}")
+                print(f"ERROR ERROR - NOT FOUND {cleanedDude}")
 
         print(cleanedDude)
         summaryParagraph = p_wiki.split("\n")[0].lower().replace(",", " ").replace(":", " ").split(" ")
@@ -74,9 +74,7 @@ csv = pd.DataFrame(columns=["Word", "Count"])
 csv["Word"] = allWords.keys()
 csv["Count"] = allWords.values()
 
-csv.to_csv("worddata", index=False, )
-
-
+csv.to_csv("allWordsFound.csv", index=False, header=True)
 
 # --- TRENDING VALUES ---
 
@@ -99,7 +97,7 @@ for period in allPeriods:
     dataframe["Word"] = wordsFoundInThatPeriod.keys()
     dataframe["Count"] = wordsFoundInThatPeriod.values()
 
-    filename = f"Trending Data, {sectionNames[sectionIndex]}"
+    filename = f"Trending Data, {sectionNames[sectionIndex]}.csv"
     dataframe.sort_values(by="Count", inplace=True, ascending=False)
     dataframe.to_csv(filename, index=False)
 

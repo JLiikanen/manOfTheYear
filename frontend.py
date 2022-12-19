@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-import dataInPandas as source
+import dataToPandas as source
 
 # SETTING UP DATA
 
@@ -9,7 +9,7 @@ st.set_page_config(page_title="Person's of the Year", page_icon=":mortar_board:"
 
 # TOP WORDS
 
-# todo trending barchart and rewrite the source data displayed.
+
 # THE INTRO CHAPTER
 
 lmargin, center, rmargin = st.columns([0.5, 1, 0.5])
@@ -20,7 +20,8 @@ with center:
 
     st.write("**The questions that sparked this project:** ")
     st.write(
-        "> What do the Persons of the Year have in common?  \n>What makes them special?  \n>What could I learn from them?")
+        "> What do the Persons of the Year have in common?  \n>What makes them special?  \n>What could I learn from "
+        "them?")
 
     st.write("The time chooses yearly one person, group, or object or institute that has for better or for worse ...  "
              "done the most to influence the events of the year. "
@@ -43,7 +44,7 @@ with center:
     st.write("Good questions. ")
 
     st.write("**My hypothesis:** I believed most of them would have a business, military and political background. "
-             "However, as it turned out, my hypothesis both underestimated and overestimated certain categories.")
+             "However, as it turned out, the 'weight' between the categories wasn't what I was expecting.")
 
     st.write("**Project Execution with The DAD Framework:**")
 
@@ -81,7 +82,7 @@ with center:
                 "- Streamlit  \n"
                 "- Plotly  \n"
                 "- Pandas (And its dependencies like Beautiful Soup 4)  \n"
-                "- Wikipedia-api  \n")
+                "- Wikipedia api  \n")
 
 # DATA READY FOR DISPLAY - MAKING CHARTS
 
@@ -122,6 +123,7 @@ with cats:
                      "First: 30 + first-ever: 1 = 31  \n" +
                      "War: 24, +  war.: 4 = 28  \n"
                      )
+
 
     # ---- Helper Function ---
     def barChart(dataframe, color, name, total=0, tickanglevalue=0, needsTotal=True):
@@ -237,7 +239,7 @@ with cats:
     with coljobs:
         barChart(source.jobs, "#E01E5A", "Occupations", 69)
 
-        st.write("Other jobs that give influence apart from directly politics. ")
+        st.write("Common occupation they have. I'm surprised how many times the word lawyer was found!")
         with st.expander("See the data and word bundles for this table :point_up:"):
             st.write("Businessman: 6 + entrepreneur: 4 + founder: 8 + co-founder:1  = 19  \n"
                      "Lawyer: 8 + attorney:11 = 19  \n"
@@ -301,7 +303,7 @@ with cats:
 
     with inner:
         barChart(source.other, "#2D3C4E", "Other - Non Categorized, But Worth Mention", 263, tickanglevalue=45)
-        st.write("Miscellaneous.")
+        st.write("Miscellaneous. But the words are still somewhat related to the categories above.")
         with st.expander("See the data and word bundles for this table :point_up:"):
             st.write("World:30 + world.:4 + world's:5 = 39  \n"
                      "During:35   \n"
@@ -330,7 +332,7 @@ with trends:
 
         st.write("To do this, I scraped the honorees selected during the specified timeframe and picked the top 10 "
                  "nouns "
-                 "and/or adjectives that occurred in the first paragraph of their wikipedia articles. "
+                 "and/or adjectives that occurred in the first paragraphs of their wikipedia articles. "
                  "No word bundles were made.")
 
     first, second = st.columns(2)
@@ -351,3 +353,20 @@ with trends:
 
     with central:
         barChart(source.fifthPeriod2003, "#748FFB", "2003-2021", needsTotal=False, tickanglevalue=45)
+        st.write("**There seems to be a general trend of**  \n1. An important event. (The context in which they "
+                 "became important.)  \n2. Politics and the position "
+                 "of power achieved "
+                 "through "
+                 "politics in a powerful/relevant country. Other paths to power, such as a military career is also "
+                 "present. "
+                 " And even if not mentioned, businesses have always been a channel for making an impact. "
+                 "\n3. Doing something new.")
+
+with data:
+    st.write("**Want to see the raw source data that contains all the words found?**")
+
+    with open("allWordsFound", encoding="utf-8") as f:
+        st.download_button("Download Source Data in CSV", f, mime="text/csv", file_name="allWordsFound.csv")
+
+
+
