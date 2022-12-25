@@ -60,9 +60,8 @@ with center:
 
     st.write("**Analyze:** Once data mining was completed, I had to manually categorize* similar nouns and adjectives "
              "into groups. I later found out about the [NLTK python library](https://www.nltk.org/), which would have "
-             "saved me from a lot of "
-             "manual labour. Might refactor the code with NLTK soon."
-             "Anyway, I ended up keeping little under 90 different words/and/bundles out of all the unique 3303 words "
+             "saved me some time. Might refactor the code with NLTK soon."
+             "Anyway, I ended up keeping little under 90 different words/and/bundles out of all the 3303 words "
              "found. ")
 
     st.write("What bundles??")
