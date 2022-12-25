@@ -15,28 +15,33 @@ st.set_page_config(page_title="Person's of the Year", page_icon=":mortar_board:"
 lmargin, center, rmargin = st.columns([0.5, 1, 0.5])
 
 with center:
-    st.header("The Most Influential People In History: What made them so significant?")
+    st.header("The Most Influential People In History: What made them so extraordinary?")
     st.write("4.12.2022")
 
     st.write("**The questions that sparked this project:** ")
     st.write(
-        "> What do the Persons of the Year have in common?  \n>What makes them special?  \n>What could I learn from "
-        "them?")
+        "> What traits do the Persons of the Year have in common?  \n>What sets them apart?  \n>What are the pratical"
+        "takeaways we can get by analyzing them?"
+        )
 
     st.write("The time chooses yearly one person, group, or object or institute that has for better or for worse ...  "
              "done the most to influence the events of the year. "
              "This [list]("
-             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) seemed like a good and justified starting point for "
+             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) seemed like a good and justified starting point "
+             "for "
              "this study, as I now already had a list of "
-             "influential people. (Though their list can be disagreed with.)")
+             "influential people that can be analyzed. (Though their list can be disagreed with, and might be a "
+             "little skewed towards americans.)")
 
-    st.write("But, what makes them influential? What backgrounds do they have? What achievements do they have? In what "
+    st.write("Despite that, it remains a reliable source for finding answers to our questions.  \nWhat makes them "
+             "influential?  \n What backgrounds do they have? What achievements do they "
+             "have?  \n In what "
              "circumstances did they become influential? ")
 
     st.write("##### Could you become like them and replicate their success?")
     st.write("What if our school system trained people to be like the people on [The Time List...]("
              "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) Would our society be more " +
-             "advanced if everyone tried to be like them to the best of their abilities?  \n\nOr yikes, would it end "
+             "advanced if everyone aspired to be like them to the best of their abilities?  \n\nOr yikes, would it end "
              "up "
              "being "
              "even…  worse?")
@@ -48,19 +53,25 @@ with center:
 
     st.write("**Project Execution with The DAD Framework:**")
 
-    st.write("**Data:** I decided to count all the words that occurred in their wikipedia summaries* (The first few "
-             "paragraphs) and see if there would be some words occurring more often. I did this with python web "
-             "scraping.")
+    st.write("**Data:** I decided to count all the words that occurred in their wikipedia summaries* (The first "
+             "paragraph.) and see if there would be some words occurring more often, which would reveal underlying "
+             "patterns. "
+             "The data was collected through Python Text mining with the pandas library and wikipedia api.")
 
-    st.write("**Analyze:** After doing this, I had to manually categorize* similar nouns and adjectives into groups. "
-             "I ended up keeping little under 90 different words/and/bundles out of all the unique 3303 words found. ")
+    st.write("**Analyze:** Once data mining was completed, I had to manually categorize* similar nouns and adjectives "
+             "into groups. I later found out about the [NLTK python library](https://www.nltk.org/), which would have "
+             "saved me from a lot of "
+             "manual labour. Might refactor the code with NLTK soon."
+             "Anyway, I ended up keeping little under 90 different words/and/bundles out of all the unique 3303 words "
+             "found. ")
 
-    st.write("What bundles?")
+    st.write("What bundles??")
 
     st.write(
         "Some words "
         "were closely "
-        "related, so I decided to count them together. (Eg. “Politician” occurred 7 times + “Statesman” was "
+        "related, so I decided to count them together. Here's the logic: (Eg. “Politician” occurred 7 times + "
+        "“Statesman” was "
         "found 5 "
         "times, "
         "so in total “Politician” occurred 12 times.")
@@ -69,7 +80,7 @@ with center:
         "**Display:** Based on the words & bundles, I formed Plotly bar charts displayed on this Streamlit website. "
         "For transparency, All the words that were bundled are shown under the barcharts and the original dataset "
         "scraped "
-        "is also publicly available in “The Source Data”.")
+        "is also publicly available in “The Source Data” -tab.")
 
     st.caption("> *1. (A summary is counted from the beginning until the first line break. (Line break in python))  \n"
                "> *2. This was done "
