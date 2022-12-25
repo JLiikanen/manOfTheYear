@@ -21,27 +21,27 @@ with center:
     st.write("**The questions that sparked this project:** ")
     st.write(
         "> What traits do the Persons of the Year have in common?  \n>What sets them apart?  \n>What are the pratical"
-        "takeaways we can get by analyzing them?"
+        "takeaways we can get by observing them?"
         )
 
     st.write("The time chooses yearly one person, group, or object or institute that has for better or for worse ...  "
              "done the most to influence the events of the year. "
              "This [list]("
-             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) seemed like a good and justified starting point "
+             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) seemed like a justified starting point "
              "for "
-             "this study, as I now already had a list of "
+             "this study, as I now already had a sample of "
              "influential people that can be analyzed. (Though their list can be disagreed with, and might be a "
              "little skewed towards americans.)")
 
-    st.write("Despite that, it remains a reliable source for finding answers to our questions.  \nWhat makes them "
-             "influential?  \n What backgrounds do they have? What achievements do they "
-             "have?  \n In what "
-             "circumstances did they become influential? ")
+    st.write("Despite that, it remains a reliable source for finding answers to our questions.  \nWhat factors "
+             "contribute to their influence? "
+             "\n What careers have they pursued?  \nIn what "
+             "circumstances did they make their breakthrough?")
 
     st.write("##### Could you become like them and replicate their success?")
-    st.write("What if our school system trained people to be like the people on [The Time List...]("
+    st.write("What if our school system trained students to be like the people on [The Time List...]("
              "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) Would our society be more " +
-             "advanced if everyone aspired to be like them to the best of their abilities?  \n\nOr yikes, would it end "
+             "advanced if everyone aspired to be like them to the best of their abilities?  \nOr yikes, would it end "
              "up "
              "being "
              "even…  worse?")
