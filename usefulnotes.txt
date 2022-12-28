@@ -10,5 +10,6 @@ requirements:
         plotly >= 5.11.0
         streamlit >= 1.15.0
 
-
+allWordsFound.txt contains all the words found.The Excel file contains all the data (periods and all the words)
+combined in a neat format.
 

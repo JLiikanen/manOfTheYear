@@ -20,31 +20,33 @@ with center:
 
     st.write("**The questions that sparked this project:** ")
     st.write(
-        "> What traits do the Persons of the Year have in common?  \n>What sets them apart?  \n>What are the pratical"
+        "> What traits do these influential people have in common?  \n>What sets them apart?  \n>What are the pratical "
         "takeaways we can get by observing them?"
-        )
+    )
 
-    st.write("The time chooses yearly one person, group, or object or institute that has for better or for worse ...  "
+    st.write("The Time paper chooses yearly one person, group, or object or institute that has for better or for "
+             "worse ... "
              "done the most to influence the events of the year. "
-             "This [list]("
-             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) seemed like a justified starting point "
+             "The [list of the winners]("
+             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) of The Person Of The Year award seemed like a "
+             "justified starting point "
              "for "
              "this study, as I now already had a sample of "
              "influential people that can be analyzed. (Though their list can be disagreed with, and might be a "
              "little skewed towards americans.)")
 
-    st.write("Despite that, it remains a reliable source for finding answers to our questions.  \nWhat factors "
-             "contribute to their influence? "
-             "\n What careers have they pursued?  \nIn what "
+    st.write("Despite that, it remains a reliable source for finding answers to our questions.  \n\nWhat factors "
+             "contribute to their influence?  \n\n"
+             " What careers have they pursued?  \n\nIn what "
              "circumstances did they make their breakthrough?")
 
-    st.write("##### Could you become like them and replicate their success?")
+    st.write("##### Most importantly, could you become like them and replicate their success?")
     st.write("What if our school system trained students to be like the people on [The Time List...]("
-             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year) Would our society be more " +
-             "advanced if everyone aspired to be like them to the best of their abilities?  \nOr yikes, would it end "
+             "https://en.wikipedia.org/wiki/Time_Person_of_the_Year)  \n\nWould our society be more " +
+             "advanced if everyone aspired to be like them to the best of their abilities?  \n\nOr yikes, would it end "
              "up "
              "being "
-             "even…  worse?")
+             "even…  Worse?")
 
     st.write("Good questions. ")
 
@@ -59,44 +61,47 @@ with center:
              "The data was collected through Python Text mining with the pandas library and wikipedia api.")
 
     st.write("**Analyze:** Once data mining was completed, I had to manually categorize* similar nouns and adjectives "
-             "into groups. I later found out about the [NLTK python library](https://www.nltk.org/), which would have "
-             "saved me some time. Might refactor the code with NLTK soon."
-             "Anyway, I ended up keeping little under 90 different words/and/bundles out of all the 3303 words "
+             "into categories, for example, a word might belong to the 'Military' or 'Politics' category. On a side "
+             "note, I later "
+             "found out about the [NLTK "
+             "python library](https://www.nltk.org/), which would have "
+             "saved me some time processing the words. Might refactor the code with NLTK soon. "
+             " Anyway, I ended up keeping little under 90 different words/bundles out of all the 3303 words "
              "found. ")
 
-    st.write("What bundles??")
+    st.write("You may ask, what bundles??")
 
     st.write(
         "Some words "
         "were closely "
-        "related, so I decided to count them together. Here's the logic: (Eg. “Politician” occurred 7 times + "
+        "related, so I decided to count them together as a bundle. Here's the logic: (Eg. “Politician” occurred 7 "
+        "times + "
         "“Statesman” was "
         "found 5 "
         "times, "
-        "so in total “Politician” occurred 12 times.")
+        "so in total “Politician” occurred 12 times. The word “Politician” belongs to the Politics word category.")
 
     st.write(
-        "**Display:** Based on the words & bundles, I formed Plotly bar charts displayed on this Streamlit website. "
-        "For transparency, All the words that were bundled are shown under the barcharts and the original dataset "
-        "scraped "
+        "**Display:** Based on the word categories, I formed Plotly bar charts displayed on this Streamlit website. "
+        "For transparency, the data used for the current chart is shown under the chart. The raw dataset "
         "is also publicly available in “The Source Data” -tab.")
 
-    st.caption("> *1. (A summary is counted from the beginning until the first line break. (Line break in python))  \n"
+    st.caption("> *1. (A summary is counted from the beginning until the first line break.  \n"
                "> *2. This was done "
                "purely according "
-               "to my judgment. You may have bundled different words together. Which would change some scores for "
+               "to my judgment. You may have bundled different words together, which would change the scores for "
                "certain "
                "words, but not significantly enough. The main patterns won’t change no matter what.")
 
     st.markdown("Libraries used:  \n"
                 "- Streamlit  \n"
                 "- Plotly  \n"
-                "- Pandas (And its dependencies like Beautiful Soup 4)  \n"
-                "- Wikipedia api  \n")
+                "- Pandas  \n"
+                "- [Wikipedia api](https://wikipedia.readthedocs.io/en/latest/code.html)  \n")
 
 # DATA READY FOR DISPLAY - MAKING CHARTS
 
-cats, trends, data = st.tabs(["Categories", "Trends", "Source Data"])
+cats, trends, data = st.tabs(["Main", "Trends", "Source Data"])
 
 with cats:
     lpad, middle, rpad = st.columns([0.5, 1, 0.5])
@@ -340,7 +345,9 @@ with trends:
         st.write("This section demonstrates the fluctuations in the popularity of words used in the articles of the "
                  "honorees between the timeframes.")
 
-        st.write("To do this, I scraped the honorees selected during the specified timeframe and picked the top 10 "
+        st.write("To do this, I scraped only the honorees selected during the specified timeframe (Eg. The winners "
+                 "between 1927 - 1945) and picked the top "
+                 "10 "
                  "nouns "
                  "and/or adjectives that occurred in the first paragraphs of their wikipedia articles. "
                  "No word bundles were made.")
@@ -373,10 +380,30 @@ with trends:
                  "\n3. Doing something new.")
 
 with data:
-    st.write("**Want to see the raw source data that contains all the words found?**")
+    st.write("##### Want to see the raw source data that contains all the words found?")
 
     with open("allWordsFound", encoding="utf-8") as f:
         st.download_button("Download Source Data in CSV", f, mime="text/csv", file_name="allWordsFound.csv")
 
+    st.write("##### Periodic Data")
+    first, second, thrid, fourth, fifth, emptySpace = st.columns([0.5, 0.5, 0.5, 0.5, 0.5, 2.2])
 
+    with first:
+        with open("Trending Data, 1927-1945", encoding="utf-8") as f:
+            st.download_button("1927 - 1945", f, mime="text/csv", file_name="Trending Data, 1927-1945.csv")
+    with second:
+        with open("Trending Data, 1946 - 1964", encoding="utf-8") as f:
+            st.download_button("1946 - 1964", f, mime="text/csv", file_name="Trending Data, 1946 - 1964.csv")
+
+    with thrid:
+        with open("Trending Data, 1965 - 1983", encoding="utf-8") as f:
+            st.download_button("1965 - 1983", f, mime="text/csv", file_name="Trending Data, 1965 - 1983.csv")
+
+    with fourth:
+        with open("Trending Data, 1984 - 2002", encoding="utf-8") as f:
+            st.download_button("1984 - 2002", f, mime="text/csv", file_name="Trending Data, 1984 - 2002.csv")
+
+    with fifth:
+        with open("Trending Data, 2003 - 2021", encoding="utf-8") as f:
+            st.download_button("2003 - 2021", f, mime="text/csv", file_name="Trending Data, 2003 - 2021.csv")
 
